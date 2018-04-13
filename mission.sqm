@@ -1,0 +1,229 @@
+version=53;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=513;
+	class ItemIDProvider
+	{
+		nextID=20;
+	};
+	class Camera
+	{
+		pos[]={1898.2726,16.034828,3909.6626};
+		dir[]={0.65832788,-0.52365041,0.54095};
+		up[]={0.40459776,0.85190904,0.33245766};
+		aside[]={0.63493943,-5.5943383e-007,-0.77271181};
+	};
+};
+binarizationWanted=0;
+addons[]=
+{
+	"A3_Characters_F",
+	"A3_Soft_F_Gamma_Hatchback_01",
+	"A3_Soft_F_Gamma_Van_01",
+	"A3_Soft_F_Orange_Van_02"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=3;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Soft_F_Gamma";
+			name="Arma 3 - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Soft_F_Orange";
+			name="Arma 3 Orange - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+randomSeed=8229591;
+class ScenarioData
+{
+	author="Djavu";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		day=28;
+		hour=13;
+		minute=37;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=5;
+		class Item0
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1910.7761,5.0014391,3915.2876};
+						angles[]={0,5.6132336,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="call{[] spawn {sleep 0.5;waituntil {!isnull p1}; titleText [""TEXTO EXIBIDO LOCALMENTE, PARA MP TEM Q CONFIGURAR."", ""PLAIN DOWN""];};}";
+						name="p1";
+						isPlayer=1;
+					};
+					id=9;
+					type="B_soldier_AAA_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=8;
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1901.6324,6.4501238,3925.0974};
+				angles[]={0,5.5088177,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{this setPlateNumber ""ANR 2251 ""}";
+				name="car";
+			};
+			id=11;
+			type="C_Hatchback_01_F";
+		};
+		class Item2
+		{
+			dataType="Trigger";
+			position[]={1906.6316,5,3920.6472};
+			class Attributes
+			{
+				condition="call{cursortarget == car || cursortarget == car2 || cursortarget == car3 }";
+				onActivation="call{if (cursortarget == car) then {hint format [""A placa deste veiculo é  %1"", getPlateNumber car]; } else {if (cursortarget == car2) then {hint format [""A placa deste veiculo é  %1"", getPlateNumber car2]};if (cursortarget == car3) then {hint format [""A placa deste veiculo é  %1"", getPlateNumber car3]};};}";
+				onDeactivation="call{hint """"}";
+				sizeA=0;
+				sizeB=0;
+				repeatable=1;
+			};
+			id=12;
+			type="EmptyDetector";
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1897.7443,6.8698459,3922.1167};
+				angles[]={0,5.4422507,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{this setPlateNumber ""IAN 5232""}";
+				name="car2";
+			};
+			id=18;
+			type="C_Van_01_box_F";
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1905.2545,6.7897863,3928.8198};
+				angles[]={0,5.7537742,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="call{this setPlateNumber ""SAMU 191""}";
+				name="CAR3";
+			};
+			id=19;
+			type="C_Van_02_medevac_F";
+		};
+	};
+};
